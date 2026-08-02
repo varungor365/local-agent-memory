@@ -1,11 +1,11 @@
 import argparse
 import sys
+
 from rich.console import Console
 from rich.table import Table
-from rich.panel import Panel
 
-from .db import AgentMemoryDB
 from . import __version__
+from .db import AgentMemoryDB
 
 console = Console()
 
@@ -36,7 +36,7 @@ def main():
     
     try:
         db = AgentMemoryDB()
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         console.print(f"[red]Failed to initialize database: {e}[/red]")
         sys.exit(1)
         

@@ -1,7 +1,7 @@
 import sqlite3
-from pathlib import Path
-from typing import List, Dict, Optional
 from datetime import datetime
+from pathlib import Path
+
 
 class AgentMemoryDB:
     def __init__(self, db_path: str = ".agent_memory.db"):
@@ -27,14 +27,14 @@ class AgentMemoryDB:
     def add_memory(self, content: str, tags: str = "") -> None:
         """Add a new memory to the database."""
         cursor = self.conn.cursor()
-        timestamp = datetime.now().isoformat()
+        timestamp = datetime.now().isoformat()  # noqa: DTZ005
         cursor.execute(
             "INSERT INTO memories (content, tags, timestamp) VALUES (?, ?, ?)",
             (content, tags, timestamp)
         )
         self.conn.commit()
         
-    def search(self, query: str, limit: int = 5) -> List[Dict]:
+    def search(self, query: str, limit: int = 5) -> list[dict]:
         """Search memories using FTS5 match query."""
         cursor = self.conn.cursor()
         

@@ -1,6 +1,9 @@
-import pytest
 import os
+
+import pytest
+
 from local_agent_memory.db import AgentMemoryDB
+
 
 @pytest.fixture
 def memory_db(tmp_path):
