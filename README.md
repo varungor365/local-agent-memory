@@ -62,3 +62,11 @@ If you are an AI assistant (Claude, Cursor, Copilot) operating in a user's termi
 ## 📄 License
 
 MIT © Varun Ruhella. See [LICENSE](LICENSE) for details.
+
+## Who this is for
+
+Local Agent Memory provides a local SQLite and FTS5 memory hub for AI coding agents that need searchable context across sessions. It is a good fit for privacy-first developer tools, terminal agents, and experiments that should keep memory on the user’s machine.
+
+## Why star this repository
+
+Star this project if persistent agent memory, SQLite full-text search, or local-first AI tooling is part of your workflow.
