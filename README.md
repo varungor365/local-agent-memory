@@ -17,7 +17,7 @@
 
 ## ✨ Why this exists
 
-When you use AI coding agents (like Cursor, Copilot, or Claude), they have "amnesia". If you close the chat, they forget all the architecture decisions, bugs you just fixed, and database credentials you told them about.
+When you use AI coding agents (like Cursor, Copilot, or Claude), they have "amnesia". If you close the chat, they forget architecture decisions, bugs you just fixed, and other project context you want to preserve.
 
 **local-agent-memory** solves this by providing a blazingly fast, SQLite-based local memory store. Whenever you make a big decision, tell your agent to `amem add "Architecture: We are using Redis for caching."`. The next time it needs to know, it can `amem search "cache"`.
 
@@ -36,6 +36,9 @@ pip install local-agent-memory
 ```
 
 ### Usage
+
+For a disposable demo that cannot touch an existing `.agent_memory.db`, run [examples/quickstart.sh](examples/quickstart.sh) from the repository root. It creates a temporary directory, adds one example memory, searches it, and removes the directory on exit.
+
 Add a memory:
 ```bash
 amem add "The production database uses PostgreSQL" --tags "db,prod"
